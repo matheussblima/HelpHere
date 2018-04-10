@@ -7,8 +7,8 @@ export default EStylesSheet.create({
     margin: 8,
   },
   baseButton: {
+    alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
     paddingHorizontal: 20,
   },
   baseText: {
