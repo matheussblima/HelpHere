@@ -1,0 +1,3 @@
+rootProject.name = 'HelpHere'
+
+include ':app'
