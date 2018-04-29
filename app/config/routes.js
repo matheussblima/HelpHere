@@ -1,13 +1,16 @@
 import { StackNavigator } from 'react-navigation';
-import { Onboarding } from '../screens';
+import { Onboarding, Login } from '../screens';
 
 export default StackNavigator(
   {
     Onboarding: {
-      screen: Onboarding,
+      screen: Login,
       navigationOptions: {
         header: () => null,
       },
+    },
+    Login: {
+      screen: Login,
     },
   },
   {

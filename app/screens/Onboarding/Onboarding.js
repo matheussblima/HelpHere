@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import strings from '../../config/strings';
@@ -8,6 +9,8 @@ import { colors } from '../../config/theme';
 
 class Onboarding extends React.Component {
   render() {
+    const { navigation } = this.props;
+
     return (
       <Container>
         {/* HEADER */}
@@ -41,6 +44,7 @@ class Onboarding extends React.Component {
               textStyle={styles.buttonTextEntrar}
               type="naked"
               shadow={false}
+              onPress={() => navigation.navigate('Login')}
             >
               {strings.login}
             </Button>
@@ -50,5 +54,9 @@ class Onboarding extends React.Component {
     );
   }
 }
+
+Onboarding.propTypes = {
+  navigation: PropTypes.object,
+};
 
 export default Onboarding;

@@ -1,3 +1,4 @@
 import { Onboarding } from './Onboarding';
+import { Login } from './Login';
 
-export { Onboarding };
+export { Onboarding, Login };
