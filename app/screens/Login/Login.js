@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, StatusBar } from 'react-native';
 
 import strings from '../../config/strings';
 import styles from './styles';
@@ -12,18 +12,21 @@ class Login extends React.Component {
 
     return (
       <Container>
+        <StatusBar barStyle="dark-content" />
         <Content>
-          <View style={{ flex: 1 }}>
+          <View style={styles.container}>
             {/* HEADER */}
             <View style={styles.header}>
               <Avatar />
             </View>
             {/* INPUTS */}
-            <Input placeholder="CPF" />
-            <Input placeholder="Senha" />
+            <Input placeholder={strings.cpf} />
+            <Input placeholder={strings.password} />
             {/* BUTTONS */}
-            <View>
-              <Button kind="rounded">Entrar</Button>
+            <View style={styles.buttonsSection}>
+              <Button kind="rounded">
+                {strings.login}
+              </Button>
             </View>
           </View>
         </Content>

@@ -153,6 +153,7 @@ class Input extends React.Component {
         {leftIcon}
         <TextInput
           {...this.props}
+          underlineColorAndroid="rgba(0,0,0,0)"
           style={inputStyles}
           editable={!disabled}
           onChangeText={value => this.onChangeText(value)}
