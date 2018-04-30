@@ -4,7 +4,7 @@ import { View } from 'react-native';
 
 import strings from '../../config/strings';
 import styles from './styles';
-import { Container, Avatar, Content, Input } from '../../components';
+import { Container, Avatar, Content, Input, Button } from '../../components';
 
 class Login extends React.Component {
   render() {
@@ -14,9 +14,15 @@ class Login extends React.Component {
       <Container>
         <Content>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Avatar />
+            {/* HEADER */}
+            <View>
+              <Avatar />
+            </View>
+            {/* INPUTS */}
             <Input placeholder="CPF" />
-            <Input placeholder="CPF" />
+            <Input placeholder="Senha" />
+            {/* BUTTONS */}
+            <Button kind="rounded">Entrar</Button>
           </View>
         </Content>
       </Container>
