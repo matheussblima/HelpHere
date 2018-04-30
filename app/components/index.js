@@ -7,10 +7,12 @@ import { Logo } from './Logo';
 import { Container } from './Container';
 import { Content } from './Content';
 import { Avatar } from './Avatar';
+import { Input } from './Input';
 
 export {
   Button,
   Icon,
+  Input,
   H1,
   H2,
   H3,
