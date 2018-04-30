@@ -139,6 +139,7 @@ class Input extends React.Component {
     ];
 
     const inputContainerStyles = [
+      styles.container,
       styles.baseInput,
       disabled ? styles.inputDisabled : {},
       inputStatus,

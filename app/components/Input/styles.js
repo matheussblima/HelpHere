@@ -3,6 +3,9 @@ import EStylesSheet from 'react-native-extended-stylesheet';
 import { theme } from '../../config/theme';
 
 export default EStylesSheet.create({
+  container: {
+    margin: 8,
+  },
   baseInput: {
     alignSelf: 'stretch',
     flexDirection: 'row',

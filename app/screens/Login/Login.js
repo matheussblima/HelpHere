@@ -15,7 +15,8 @@ class Login extends React.Component {
         <Content>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Avatar />
-            <Input />
+            <Input placeholder="CPF" />
+            <Input placeholder="CPF" />
           </View>
         </Content>
       </Container>
