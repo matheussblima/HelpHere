@@ -4,6 +4,8 @@ import { theme } from '../../config/theme';
 
 export default EStylesSheet.create({
   container: {
+    justifyContent: 'center',
+    alignItems: 'center',
     margin: 8,
   },
   baseAvatar: {

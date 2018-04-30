@@ -13,16 +13,18 @@ class Login extends React.Component {
     return (
       <Container>
         <Content>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <View style={{ flex: 1 }}>
             {/* HEADER */}
-            <View>
+            <View style={styles.header}>
               <Avatar />
             </View>
             {/* INPUTS */}
             <Input placeholder="CPF" />
             <Input placeholder="Senha" />
             {/* BUTTONS */}
-            <Button kind="rounded">Entrar</Button>
+            <View>
+              <Button kind="rounded">Entrar</Button>
+            </View>
           </View>
         </Content>
       </Container>
