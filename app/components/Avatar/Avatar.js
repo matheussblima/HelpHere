@@ -64,7 +64,6 @@ class Avatar extends React.Component {
     const avatarStyles = [
       { width: size, height: size },
       circle ? { borderRadius: size / 2 } : {},
-      shadow ? styles.avatarShadow : {},
       styles.baseAvatar,
       style,
     ];
@@ -94,7 +93,7 @@ class Avatar extends React.Component {
         return (
           <LinearGradient
             colors={colorsGradient}
-            style={[{ borderRadius: size / 2 }, shadow ? styles.avatarShadow : {}]}
+            style={[{ borderRadius: size / 2 }]}
           >
             {innerContainer()}
           </LinearGradient>
@@ -104,7 +103,6 @@ class Avatar extends React.Component {
         <View
           style={[
             { borderRadius: size / 2, backgroundColor: colorAvatar },
-            shadow ? styles.avatarShadow : {},
           ]}
         >
           {innerContainer()}
@@ -114,7 +112,7 @@ class Avatar extends React.Component {
 
     return (
       <Animatable.View
-        style={[styles.container, disabled ? disabledStyle : {}]}
+        style={[styles.container, shadow ? styles.avatarShadow : {}, disabled ? disabledStyle : {}]}
         {...animatableProps}
       >
         {container()}
