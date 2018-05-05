@@ -8,6 +8,7 @@ import { Container } from './Container';
 import { Content } from './Content';
 import { Avatar } from './Avatar';
 import { Input } from './Input';
+import { Switch } from './Switch';
 
 export {
   Button,
@@ -26,4 +27,5 @@ export {
   Container,
   Content,
   Avatar,
+  Switch,
 };

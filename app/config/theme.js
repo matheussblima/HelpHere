@@ -1,17 +1,17 @@
-import { Dimensions } from 'react-native';
+import { Dimensions } from "react-native";
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
 const colors = {
-  $PRIMARY_COLOR: '#25A328',
-  $SECOND_COLOR: '#279EAE',
-  $FIFTH_COLOR: '#eff0f5',
-  $GRADIENT_ANIMATED_COLOR: ['#25a328', '#86ff89', '#279eae', '#279eae'],
+  $PRIMARY_COLOR: "#25A328",
+  $SECOND_COLOR: "#279EAE",
+  $FIFTH_COLOR: "#eff0f5",
+  $GRADIENT_ANIMATED_COLOR: ["#25a328", "#86ff89", "#279eae", "#279eae"]
 };
 
 const theme = {
   // ** BUTTON **
-  $BUTTON_FONT_COLOR: '#fff',
+  $BUTTON_FONT_COLOR: "#fff",
   $BUTTON_ROUNDED_RADIUS: 23,
   $BUTTON_ROUNDED_HEIGHT: 45,
   $BUTTON_ROUNDED_FONT_SIZE: 14,
@@ -19,9 +19,9 @@ const theme = {
   $BUTTON_SQUARED_HEIGHT: 45,
   $BUTTON_SQUARED_FONT_SIZE: 14,
   $BUTTON_STATE_SUCCESS: colors.$PRIMARY_COLOR,
-  $BUTTON_STATE_DANGER: '#ff9c00',
+  $BUTTON_STATE_DANGER: "#ff9c00",
   $BUTTON_STATE_PRIMARY: colors.$SECOND_COLOR,
-  $BUTTON_SHADOW_COLOR: '#000',
+  $BUTTON_SHADOW_COLOR: "#000",
   $BUTTON_SHADOW_OPACITY: 0.3,
   $BUTTON_SHADOW_OFFSET_WIDTH: 0,
   $BUTTON_SHADOW_OFFSET_HEIGHT: 3,
@@ -29,15 +29,15 @@ const theme = {
 
   // ** ICON **
   $BUTTON_ICON_SIZE: 25,
-  $BUTTON_ICON_COLOR: '#fff',
+  $BUTTON_ICON_COLOR: "#fff",
 
   // ** TEXT **
-  $FONT_COLOR: '#333',
+  $FONT_COLOR: "#333",
   $FONT_SIZE: 14,
-  $FONT_WEIGHT: 'normal',
-  $FONT_STYLE: 'normal',
+  $FONT_WEIGHT: "normal",
+  $FONT_STYLE: "normal",
   $PADDING_VERTICAL: 10,
-  $TEXT_ALIGN: 'left',
+  $TEXT_ALIGN: "left",
   // H1
   $FONT_SIZE_H1: 28,
   // H2
@@ -66,7 +66,7 @@ const theme = {
   // ** AVATAR **
   $AVATAR_SIZE: 130,
   $AVATAR_COLOR: colors.$SECOND_COLOR,
-  $AVATAR_SHADOW_COLOR: '#000',
+  $AVATAR_SHADOW_COLOR: "#000",
   $AVATAR_SHADOW_OPACITY: 0.3,
   $AVATAR_SHADOW_OFFSET_WIDTH: 0,
   $AVATAR_SHADOW_OFFSET_HEIGHT: 3,
@@ -74,22 +74,26 @@ const theme = {
 
   // ** INPUT **
   $INPUT_HEIGHT: 45,
-  $INPUT_BACKGROUND: '#FFF',
+  $INPUT_BACKGROUND: "#FFF",
   $INPUT_ICON_SIZE: 20,
-  $INPUT_VALID_ICON: 'md-checkmark',
-  $INPUT_WARN_ICON: 'md-alert',
-  $INPUT_ERROR_ICON: 'md-close',
-  $INPUT_NORMAL_COLOR: '#000',
-  $INPUT_VALID_COLOR: '#66bd2b',
-  $INPUT_WARN_COLOR: '#ff8c2f',
-  $INPUT_ERROR_COLOR: '#e03126',
+  $INPUT_VALID_ICON: "md-checkmark",
+  $INPUT_WARN_ICON: "md-alert",
+  $INPUT_ERROR_ICON: "md-close",
+  $INPUT_NORMAL_COLOR: "#000",
+  $INPUT_VALID_COLOR: "#66bd2b",
+  $INPUT_WARN_COLOR: "#ff8c2f",
+  $INPUT_ERROR_COLOR: "#e03126",
   $INPUT_SQUARED_RADIUS: 5,
   $INPUT_ROUNDED_RADIUS: 23,
-  $INPUT_SHADOW_COLOR: '#000',
+  $INPUT_SHADOW_COLOR: "#000",
   $INPUT_SHADOW_OPACITY: 0.3,
   $INPUT_SHADOW_OFFSET_WIDTH: 0,
   $INPUT_SHADOW_OFFSET_HEIGHT: 3,
   $INPUT_SHADOW_RADIUS: 5,
+
+  // ** SWITCH **
+  $SWITCH_FONT_COLOR: colors.$PRIMARY_COLOR,
+  $SWITCH_FONT_SIZE: 16
 };
 
 export { theme, colors };
