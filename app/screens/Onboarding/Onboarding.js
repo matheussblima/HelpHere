@@ -1,11 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import React from "react";
+import PropTypes from "prop-types";
+import { View } from "react-native";
 
-import strings from '../../config/strings';
-import styles from './styles';
-import { Container, Content, SectionRoundedBottom, Logo, H1, H4, Button } from '../../components';
-import { colors } from '../../config/theme';
+import strings from "../../config/strings";
+import styles from "./styles";
+import {
+  Container,
+  Content,
+  SectionRoundedBottom,
+  Logo,
+  H1,
+  H4,
+  Button
+} from "../../components";
+import { colors } from "../../config/theme";
 
 class Onboarding extends React.Component {
   render() {
@@ -26,7 +34,11 @@ class Onboarding extends React.Component {
         <Content style={styles.content}>
           {/* SECTION WELCOME */}
           <View style={styles.sectionWelcome}>
-            <H1 style={styles.titleWelcome} fontWeight="bold" animation="fadeInDown">
+            <H1
+              style={styles.titleWelcome}
+              fontWeight="bold"
+              animation="fadeInDown"
+            >
               {strings.welcome}
             </H1>
             <H4 style={styles.subTitleWelcome} italic animation="zoomIn">
@@ -44,7 +56,7 @@ class Onboarding extends React.Component {
               textStyle={styles.buttonTextEntrar}
               type="naked"
               shadow={false}
-              onPress={() => navigation.navigate('Login')}
+              onPress={() => navigation.navigate("Login")}
             >
               {strings.login}
             </Button>
@@ -56,7 +68,7 @@ class Onboarding extends React.Component {
 }
 
 Onboarding.propTypes = {
-  navigation: PropTypes.object,
+  navigation: PropTypes.object
 };
 
 export default Onboarding;

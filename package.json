@@ -21,6 +21,8 @@
     "react-navigation": "^1.5.11",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
+    "redux-storage": "^4.1.2",
+    "redux-storage-engine-localstorage": "^1.1.4",
     "rgb2hex": "^0.1.0",
     "vanilla-masker": "^1.2.0"
   },

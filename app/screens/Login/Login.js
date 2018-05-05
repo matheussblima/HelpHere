@@ -40,6 +40,14 @@ class Login extends React.Component {
             {/* BUTTONS */}
             <View style={styles.buttonsSection}>
               <Button kind="rounded">{strings.login}</Button>
+              <Button
+                style={styles.buttonForgotPassword}
+                shadow={false}
+                textStyle={styles.buttonTextForgotPassword}
+                type="naked"
+              >
+                {strings.ForgotPassword}
+              </Button>
             </View>
           </View>
         </Content>
