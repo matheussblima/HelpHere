@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { View, Switch as RNSwitch, TouchableOpacity } from 'react-native';
 
 import { Text } from '../Typography';
-import { colors } from '../../config/theme';
 import styles from './styles';
 
 class Switch extends React.Component {

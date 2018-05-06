@@ -4,16 +4,9 @@ import { View, StatusBar } from "react-native";
 
 import strings from "../../config/strings";
 import styles from "./styles";
-import {
-  Container,
-  Avatar,
-  Content,
-  Input,
-  Button,
-  Switch
-} from "../../components";
+import { Container, Content } from "../../components";
 
-import { colors } from "../../config/theme";
+import { Auth } from "../../containers";
 
 class Login extends React.Component {
   render() {
@@ -23,33 +16,7 @@ class Login extends React.Component {
       <Container>
         <StatusBar barStyle="dark-content" />
         <Content>
-          <View style={styles.container}>
-            {/* HEADER */}
-            <View style={styles.header}>
-              <Avatar disabled />
-            </View>
-            {/* INPUTS */}
-            <Input
-              placeholder={strings.cpf}
-              mask="999.999.999-99"
-              maxLength={14}
-            />
-            <Input placeholder={strings.password} />
-            {/* SAVE CPF */}
-            <Switch switchEnabled>{strings.rememberCpf}</Switch>
-            {/* BUTTONS */}
-            <View style={styles.buttonsSection}>
-              <Button kind="rounded">{strings.login}</Button>
-              <Button
-                style={styles.buttonForgotPassword}
-                shadow={false}
-                textStyle={styles.buttonTextForgotPassword}
-                type="naked"
-              >
-                {strings.ForgotPassword}
-              </Button>
-            </View>
-          </View>
+          <Auth />
         </Content>
       </Container>
     );
