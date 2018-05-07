@@ -1,26 +1,18 @@
-import * as storage from "redux-storage";
-import createEngine from "redux-storage-engine-localstorage";
-import thunk from "redux-thunk";
-import { createStore, applyMiddleware } from "redux";
-import reducers from "../reducers";
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-const reducer = storage.reducer(reducers);
-const engine = createEngine("helpHereStorage");
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import rootReducer from '../reducers';
 
-const middleware = storage.createMiddleware(engine);
+const persistConfig = {
+  key: 'root',
+  storage,
+  stateReconciler: autoMergeLevel2,
+};
 
-const createStoreWithMiddleware = applyMiddleware(thunk, middleware)(
-  createStore
-);
-const store = createStoreWithMiddleware(reducer);
+const persistReducers = persistReducer(persistConfig, rootReducer);
 
-const load = storage.createLoader(engine);
-load(store);
-
-load(store)
-  .then(newState => console.log("Loaded state:", newState))
-  .catch(() => console.log("Failed to load previous state"));
-
-console.warn(store);
-
-export default store;
+export const store = createStore(persistReducers, applyMiddleware(thunk));
+export const persistor = persistStore(store);

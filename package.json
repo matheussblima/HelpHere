@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint app/",
+    "lint:fix": "eslint app/ --fix"
   },
   "dependencies": {
     "babel-eslint": "^8.2.2",
@@ -24,8 +26,7 @@
     "react-navigation": "^1.5.11",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
-    "redux-storage": "^4.1.2",
-    "redux-storage-engine-localstorage": "^1.1.4",
+    "redux-persist": "^5.9.1",
     "redux-thunk": "^2.2.0",
     "rgb2hex": "^0.1.0",
     "vanilla-masker": "^1.2.0"

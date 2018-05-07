@@ -1,22 +1,39 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { View, StatusBar } from "react-native";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { View } from 'react-native';
+import { connect } from 'react-redux';
 
-import strings from "../../config/strings";
-import styles from "./styles";
-import { Avatar, Input, Button, Switch } from "../../components";
+import strings from '../../config/strings';
+import styles from './styles';
+import { Avatar, Input, Button, Switch } from '../../components';
 
-import { authentication } from "../../redux/actions/authentication";
+import validationCpf from '../../utils/validationCpf';
+import { authentication } from '../../redux/actions/authentication';
 
 class Auth extends React.Component {
-  async onPressButtonLogin() {
-    response = await this.props.dispatch(
-      authentication("88888888888", "mudar123")
-    );
+  constructor(props) {
+    super(props);
 
-    console.warn(response);
+    this.state = {
+      statusInputCpf: 'normal',
+    };
   }
+
+  async onPressButtonLogin() {
+    const response = await this.props.dispatch(authentication('88888888888', 'mudar1234'));
+
+    console.log(response);
+  }
+
+  onChangeTextInputCpf = (objectValue) => {
+    const validCpf = validationCpf(objectValue.valueRaw);
+
+    if (validCpf) {
+      this.setState({ statusInputCpf: 'normal' });
+    } else {
+      this.setState({ statusInputCpf: 'error' });
+    }
+  };
 
   render() {
     const { navigation } = this.props;
@@ -28,7 +45,13 @@ class Auth extends React.Component {
           <Avatar disabled />
         </View>
         {/* INPUTS */}
-        <Input placeholder={strings.cpf} mask="999.999.999-99" maxLength={14} />
+        <Input
+          placeholder={strings.cpf}
+          mask="999.999.999-99"
+          status={this.state.statusInputCpf}
+          maxLength={14}
+          onChangeText={value => this.onChangeTextInputCpf(value)}
+        />
         <Input placeholder={strings.password} />
         {/* SAVE CPF */}
         <Switch switchEnabled>{strings.rememberCpf}</Switch>
@@ -51,24 +74,25 @@ class Auth extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  const isLoggingIn = state.auth.isLoggingIn;
-  const isAuthenticated = state.auth.isAuthenticated;
-  const message = state.auth.message;
-  const token = state.auth.token;
-  const status = state.auth.status;
+const mapStateToProps = (state) => {
+  const authIsLoggingIn = state.authentication.isLoggingIn;
+  const authIsAuthenticated = state.authentication.isAuthenticated;
+  const authMessage = state.authentication.message;
+  const authToken = state.authentication.token;
+  const authStatus = state.authentication.status;
 
   return {
-    isLoggingIn,
-    isAuthenticated,
-    message,
-    token,
-    status
+    authIsLoggingIn,
+    authIsAuthenticated,
+    authMessage,
+    authToken,
+    authStatus,
   };
 };
 
 Auth.propTypes = {
-  navigation: PropTypes.object
+  dispatch: PropTypes.func,
+  navigation: PropTypes.object,
 };
 
 export default connect(mapStateToProps)(Auth);

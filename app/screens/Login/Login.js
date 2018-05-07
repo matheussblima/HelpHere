@@ -1,12 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { View, StatusBar } from "react-native";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StatusBar } from 'react-native';
 
-import strings from "../../config/strings";
-import styles from "./styles";
-import { Container, Content } from "../../components";
+import { Container, Content } from '../../components';
 
-import { Auth } from "../../containers";
+import { Auth } from '../../containers';
 
 class Login extends React.Component {
   render() {
@@ -24,7 +22,7 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  navigation: PropTypes.object
+  navigation: PropTypes.object,
 };
 
 export default Login;

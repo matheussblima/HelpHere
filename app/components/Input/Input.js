@@ -35,8 +35,20 @@ class Input extends React.Component {
         maskedValue = VMasker.toPattern(inputValue, mask);
       }
 
-      if (value !== maskedValue) this.setState({ value: maskedValue });
-      onChangeText(maskedValue);
+      if (value !== maskedValue) {
+        this.setState({ value: maskedValue });
+      }
+
+      if (maskedValue !== '') {
+        const valueRaw = maskedValue.match(/\d/g).join('');
+
+        const object = {
+          valueRaw,
+          value: maskedValue,
+        };
+
+        onChangeText(object);
+      }
     } else {
       this.setState({ value });
       onChangeText(value);
