@@ -48,7 +48,7 @@ export const authentication = (username, password) => (dispatch) => {
       })))
     .then(({ response, json }) => {
       if (response.ok) {
-        return dispatch(loginSuccess(json , response.status));
+        return dispatch(loginSuccess(json, response.status));
       }
       return dispatch(loginFailure(
         response.status,

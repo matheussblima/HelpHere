@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import strings from '../../config/strings';
 import styles from './styles';
-import { Avatar, Input, Button, Switch } from '../../components';
+import { Avatar, Input, Button, Switch, Alert } from '../../components';
 
 import validationCpf from '../../utils/validationCpf';
 import { authentication } from '../../redux/actions/authentication';
@@ -16,27 +16,34 @@ class Auth extends React.Component {
 
     this.state = {
       statusInputCpf: 'normal',
+      disabledButtonLogin: false,
+      user: null,
+      password: null,
     };
-  }
-
-  async onPressButtonLogin() {
-    const response = await this.props.dispatch(authentication('88888888888', 'mudar1234'));
-
-    console.log(response);
   }
 
   onChangeTextInputCpf = (objectValue) => {
     const validCpf = validationCpf(objectValue.valueRaw);
-
     if (validCpf) {
       this.setState({ statusInputCpf: 'normal' });
+      this.setState({ user: objectValue.valueRaw });
     } else {
       this.setState({ statusInputCpf: 'error' });
     }
   };
 
+  async onPressButtonLogin() {
+    const { user, password } = this.state;
+
+    if (user && password) {
+      const response = await this.props.dispatch(authentication(user, password));
+      console.log(response);
+    }
+  }
+
   render() {
     const { navigation } = this.props;
+    const { disabledButtonLogin, statusInputCpf } = this.state;
 
     return (
       <View style={styles.container}>
@@ -48,7 +55,7 @@ class Auth extends React.Component {
         <Input
           placeholder={strings.cpf}
           mask="999.999.999-99"
-          status={this.state.statusInputCpf}
+          status={statusInputCpf}
           maxLength={14}
           onChangeText={value => this.onChangeTextInputCpf(value)}
         />
@@ -57,7 +64,11 @@ class Auth extends React.Component {
         <Switch switchEnabled>{strings.rememberCpf}</Switch>
         {/* BUTTONS */}
         <View style={styles.buttonsSection}>
-          <Button kind="rounded" onPress={() => this.onPressButtonLogin()}>
+          <Button
+            disabled={disabledButtonLogin}
+            kind="rounded"
+            onPress={() => this.onPressButtonLogin()}
+          >
             {strings.login}
           </Button>
           <Button
@@ -69,6 +80,7 @@ class Auth extends React.Component {
             {strings.ForgotPassword}
           </Button>
         </View>
+        <Alert />
       </View>
     );
   }

@@ -9,6 +9,7 @@ import { Content } from './Content';
 import { Avatar } from './Avatar';
 import { Input } from './Input';
 import { Switch } from './Switch';
+import { Alert } from './Alert';
 
 export {
   Button,
@@ -28,4 +29,5 @@ export {
   Content,
   Avatar,
   Switch,
+  Alert,
 };

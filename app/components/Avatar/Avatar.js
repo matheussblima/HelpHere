@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import LinearGradient from "react-native-linear-gradient";
-import * as Animatable from "react-native-animatable";
-import { TouchableOpacity, Image, View } from "react-native";
+import React from 'react';
+import PropTypes from 'prop-types';
+import LinearGradient from 'react-native-linear-gradient';
+import * as Animatable from 'react-native-animatable';
+import { TouchableOpacity, Image, View } from 'react-native';
 
-import Icon from "../Icon";
+import Icon from '../Icon';
 
-import styles from "./styles";
-import { theme } from "../../config/theme";
+import styles from './styles';
+import { theme } from '../../config/theme';
 
 class Avatar extends React.Component {
   render() {
@@ -38,14 +38,14 @@ class Avatar extends React.Component {
       onAnimationBegin,
       colorsGradient,
       onAnimationEnd,
-      useNativeDriver
+      useNativeDriver,
     } = this.props;
 
     const touchableProps = {
       onPress,
       onPressIn,
       onPressOut,
-      onLongPress
+      onLongPress,
     };
 
     const animatableProps = {
@@ -58,14 +58,14 @@ class Avatar extends React.Component {
       transition,
       onAnimationBegin,
       onAnimationEnd,
-      useNativeDriver
+      useNativeDriver,
     };
 
     const avatarStyles = [
       { width: size, height: size },
       circle ? { borderRadius: size / 2 } : {},
       styles.baseAvatar,
-      style
+      style,
     ];
 
     const avatarImageStyles = [styles.innerContainer, styleImage];
@@ -91,18 +91,13 @@ class Avatar extends React.Component {
     const container = () => {
       if (colorsGradient) {
         return (
-          <LinearGradient
-            colors={colorsGradient}
-            style={[{ borderRadius: size / 2 }]}
-          >
+          <LinearGradient colors={colorsGradient} style={[{ borderRadius: size / 2 }]}>
             {innerContainer()}
           </LinearGradient>
         );
       }
       return (
-        <View
-          style={[{ borderRadius: size / 2, backgroundColor: colorAvatar }]}
-        >
+        <View style={[{ borderRadius: size / 2, backgroundColor: colorAvatar }]}>
           {innerContainer()}
         </View>
       );
@@ -110,11 +105,7 @@ class Avatar extends React.Component {
 
     return (
       <Animatable.View
-        style={[
-          styles.container,
-          shadow ? styles.avatarShadow : {},
-          disabled ? disabledStyle : {}
-        ]}
+        style={[styles.container, shadow ? styles.avatarShadow : {}, disabled ? disabledStyle : {}]}
         {...animatableProps}
       >
         {container()}
@@ -141,21 +132,9 @@ Avatar.propTypes = {
   colorAvatar: PropTypes.string,
   iconType: PropTypes.string,
   default: PropTypes.string,
-  style: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-    PropTypes.number
-  ]),
-  styleImage: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-    PropTypes.number
-  ]),
-  disabledStyle: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-    PropTypes.number
-  ]),
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number]),
+  styleImage: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number]),
+  disabledStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number]),
   animation: PropTypes.string,
   animatedGradient: PropTypes.bool,
   speedAnimatedGradient: PropTypes.number,
@@ -168,7 +147,7 @@ Avatar.propTypes = {
   transition: PropTypes.string,
   onAnimationBegin: PropTypes.func,
   onAnimationEnd: PropTypes.func,
-  useNativeDriver: PropTypes.bool
+  useNativeDriver: PropTypes.bool,
 };
 
 Avatar.defaultProps = {
@@ -176,11 +155,11 @@ Avatar.defaultProps = {
   border: true,
   colorAvatar: theme.$AVATAR_COLOR,
   speedAnimatedGradient: 2000,
-  iconName: "md-person",
-  iconType: "Ionicons",
+  iconName: 'md-person',
+  iconType: 'Ionicons',
   circle: true,
   size: theme.$AVATAR_SIZE,
-  activeOpacity: 0.8
+  activeOpacity: 0.8,
 };
 
 export default Avatar;

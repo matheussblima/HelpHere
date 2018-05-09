@@ -1,20 +1,20 @@
-import { Dimensions } from "react-native";
+import { Dimensions } from 'react-native';
 
-const { width, height } = Dimensions.get("window");
+const { width, height } = Dimensions.get('window');
 
 const colors = {
-  $PRIMARY_COLOR: "#25A328",
-  $SECOND_COLOR: "#279EAE",
-  $FIFTH_COLOR: "#eff0f5",
-  $SIXTH_COLOR: "#191919",
-  $ERROR_COLOR: "#e03126",
-  $WARN_COLOR: "#ff8c2f",
-  $GRADIENT_ANIMATED_COLOR: ["#25a328", "#86ff89", "#279eae", "#279eae"]
+  $PRIMARY_COLOR: '#25A328',
+  $SECOND_COLOR: '#279EAE',
+  $FIFTH_COLOR: '#eff0f5',
+  $SIXTH_COLOR: '#191919',
+  $ERROR_COLOR: '#e03126',
+  $WARN_COLOR: '#ff8c2f',
+  $GRADIENT_ANIMATED_COLOR: ['#25a328', '#86ff89', '#279eae', '#279eae'],
 };
 
 const theme = {
   // ** BUTTON **
-  $BUTTON_FONT_COLOR: "#fff",
+  $BUTTON_FONT_COLOR: '#fff',
   $BUTTON_ROUNDED_RADIUS: 23,
   $BUTTON_ROUNDED_HEIGHT: 45,
   $BUTTON_ROUNDED_FONT_SIZE: 14,
@@ -32,15 +32,15 @@ const theme = {
 
   // ** ICON **
   $BUTTON_ICON_SIZE: 25,
-  $BUTTON_ICON_COLOR: "#fff",
+  $BUTTON_ICON_COLOR: '#fff',
 
   // ** TEXT **
-  $FONT_COLOR: "#333",
+  $FONT_COLOR: '#333',
   $FONT_SIZE: 14,
-  $FONT_WEIGHT: "normal",
-  $FONT_STYLE: "normal",
+  $FONT_WEIGHT: 'normal',
+  $FONT_STYLE: 'normal',
   $PADDING_VERTICAL: 10,
-  $TEXT_ALIGN: "left",
+  $TEXT_ALIGN: 'left',
   // H1
   $FONT_SIZE_H1: 28,
   // H2
@@ -77,11 +77,11 @@ const theme = {
 
   // ** INPUT **
   $INPUT_HEIGHT: 45,
-  $INPUT_BACKGROUND: "#FFF",
+  $INPUT_BACKGROUND: '#FFF',
   $INPUT_ICON_SIZE: 20,
-  $INPUT_VALID_ICON: "md-checkmark",
-  $INPUT_WARN_ICON: "md-alert",
-  $INPUT_ERROR_ICON: "md-close",
+  $INPUT_VALID_ICON: 'md-checkmark',
+  $INPUT_WARN_ICON: 'md-alert',
+  $INPUT_ERROR_ICON: 'md-close',
   $INPUT_NORMAL_COLOR: colors.$SIXTH_COLOR,
   $INPUT_VALID_COLOR: colors.$PRIMARY_COLOR,
   $INPUT_WARN_COLOR: colors.$WARN_COLOR,
@@ -96,7 +96,17 @@ const theme = {
 
   // ** SWITCH **
   $SWITCH_FONT_COLOR: colors.$PRIMARY_COLOR,
-  $SWITCH_FONT_SIZE: 16
+  $SWITCH_FONT_SIZE: 16,
+
+  // ** ALERT **
+  $ALERT_VALID_COLOR: 'rgba(255, 255, 255, 0.95)',
+  $ALERT_WARN_COLOR: colors.$WARN_COLOR,
+  $ALERT_ERROR_COLOR: colors.$ERROR_COLOR,
+  $ALERT_SHADOW_COLOR: colors.$SIXTH_COLOR,
+  $ALERT_SHADOW_OPACITY: 0.3,
+  $ALERT_SHADOW_OFFSET_WIDTH: 0,
+  $ALERT_SHADOW_OFFSET_HEIGHT: 3,
+  $ALERT_SHADOW_RADIUS: 5,
 };
 
 export { theme, colors };
