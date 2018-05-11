@@ -7,11 +7,10 @@ export default EStylesSheet.create({
     position: 'absolute',
     flex: 1,
     elevation: 1,
-    bottom: 50,
+    bottom: 0,
     width: '100%',
     padding: 8,
     height: '100%',
-    flexDirection: 'row',
   },
   alertBase: {
     height: 100,
@@ -33,9 +32,12 @@ export default EStylesSheet.create({
   title: {
     fontSize: 20,
     bottom: '-0.4rem',
+    fontWeight: '600',
+    color: '$ALERT_COLOR_TITLE',
   },
   subtitle: {
     top: '-0.4rem',
+    color: '$ALERT_COLOR_SUBTITLE',
   },
   iconSection: {
     flex: 1,
